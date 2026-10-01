@@ -1,0 +1,25 @@
+{
+  "name": "antigravity-portfolio",
+  "version": "1.0.0",
+  "description": "Interactive Full-Stack Developer Portfolio with Antigravity Physics & PhonePe Quick Tile Hub",
+  "main": "index.html",
+  "scripts": {
+    "dev": "serve -l 8080 .",
+    "start": "serve -l 8080 .",
+    "build": "echo Static site build complete."
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  },
+  "keywords": [
+    "portfolio",
+    "antigravity",
+    "matter-js",
+    "phonepe",
+    "interactive"
+  ],
+  "author": "Qlark Gil",
+  "license": "ISC",
+  "devDependencies": {},
+  "type": "commonjs"
+}

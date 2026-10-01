@@ -1,0 +1,531 @@
+/* ==========================================================================
+   ASK-ME.CSS - PREMIUM FLOATING AI ASSISTANT & CHAT PANEL STYLES
+   ========================================================================== */
+
+/* 1. FLOATING ACTION BUTTON (FAB) */
+.ask-me-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px 12px 16px;
+  background: linear-gradient(135deg, #2F54EB 0%, #1D39C4 50%, #111827 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 12px 32px rgba(47, 84, 235, 0.4), 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.ask-me-fab:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(47, 84, 235, 0.5), 0 6px 16px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.ask-me-fab.active {
+  background: #111827;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.fab-pulse-ring {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: var(--radius-pill);
+  border: 2px solid rgba(47, 84, 235, 0.6);
+  animation: fabPulse 2.5s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes fabPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 0; }
+  100% { transform: scale(0.95); opacity: 0; }
+}
+
+.fab-icon-box {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.fab-ai-icon {
+  color: #FFD700;
+  animation: aiGlow 2s infinite alternate;
+}
+
+@keyframes aiGlow {
+  0% { transform: rotate(0deg) scale(1); filter: drop-shadow(0 0 2px #FFD700); }
+  100% { transform: rotate(15deg) scale(1.15); filter: drop-shadow(0 0 8px #FFD700); }
+}
+
+.fab-chat-icon {
+  display: none;
+}
+
+.ask-me-fab.active .fab-ai-icon { display: none; }
+.ask-me-fab.active .fab-chat-icon { display: block; color: #FFFFFF; }
+
+.fab-text {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+}
+
+.fab-badge-ai {
+  background: rgba(255, 255, 255, 0.25);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 2. CHAT PANEL BACKDROP (Mobile focus overlay) */
+.ask-me-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(11, 15, 25, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.ask-me-backdrop.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 3. CHAT PANEL CONTAINER */
+.ask-me-panel {
+  position: fixed;
+  bottom: 96px;
+  right: 28px;
+  width: 410px;
+  max-width: calc(100vw - 32px);
+  height: 600px;
+  max-height: calc(100vh - 120px);
+  background: var(--bg-card);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(47, 84, 235, 0.15);
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  border: 1px solid var(--border-light);
+}
+
+.ask-me-panel.hidden {
+  transform: translateY(30px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 4. CHAT HEADER */
+.ask-me-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #111827 0%, #1F2937 100%);
+  color: #FFFFFF;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ask-me-header-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ask-me-avatar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #2F54EB 0%, #722ED1 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFD700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(47, 84, 235, 0.4);
+}
+
+.online-indicator {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  background: #52C41A;
+  border: 2px solid #111827;
+  border-radius: 50%;
+}
+
+.ask-me-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ask-me-title-row h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.ask-me-pill {
+  background: rgba(47, 84, 235, 0.3);
+  color: #ADC6FF;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(47, 84, 235, 0.4);
+}
+
+.ask-me-subtitle {
+  font-size: 0.8rem;
+  color: #9CA3AF;
+  margin-top: 1px;
+}
+
+.ask-me-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ask-me-icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: #9CA3AF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.ask-me-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+/* 5. MESSAGES BODY */
+.ask-me-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--bg-light);
+  scroll-behavior: smooth;
+}
+
+/* WELCOME CARD */
+.ask-me-welcome-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.welcome-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.welcome-hand { font-size: 1.3rem; }
+
+.welcome-header h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.ask-me-welcome-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.welcome-suggestions-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* SUGGESTION CHIPS GRID */
+.ask-me-chips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip-btn {
+  background: var(--primary-blue-light);
+  color: var(--primary-blue);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-blue);
+  text-align: left;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  line-height: 1.3;
+}
+
+.chip-btn:hover {
+  background: var(--primary-blue);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(47, 84, 235, 0.2);
+}
+
+/* MESSAGE BUBBLES */
+.ask-me-message-row {
+  display: flex;
+  gap: 10px;
+  max-width: 88%;
+}
+
+.user-row {
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.assistant-row {
+  margin-right: auto;
+  align-items: flex-start;
+}
+
+.user-bubble {
+  background: var(--primary-blue);
+  color: #FFFFFF;
+  padding: 12px 16px;
+  border-radius: 18px 18px 4px 18px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(47, 84, 235, 0.2);
+  word-break: break-word;
+}
+
+.assistant-avatar {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #2F54EB 0%, #722ED1 100%);
+  color: #FFD700;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.assistant-bubble {
+  background: var(--bg-card);
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+  padding: 14px 16px;
+  border-radius: 18px 18px 18px 4px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  box-shadow: var(--shadow-sm);
+  word-break: break-word;
+}
+
+.assistant-bubble p {
+  margin-bottom: 8px;
+}
+.assistant-bubble p:last-child {
+  margin-bottom: 0;
+}
+
+.ask-me-list {
+  margin-left: 18px;
+  margin-bottom: 8px;
+}
+.ask-me-list li {
+  margin-bottom: 4px;
+}
+
+.assistant-bubble a {
+  color: var(--primary-blue);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* 6. TYPING BAR */
+.ask-me-typing-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-light);
+}
+
+.typing-bubble {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--primary-blue-light);
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+.typing-bubble .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--primary-blue);
+  border-radius: 50%;
+  animation: typingDot 1.4s infinite ease-in-out both;
+}
+
+.typing-bubble .dot:nth-child(1) { animation-delay: 0s; }
+.typing-bubble .dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-bubble .dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingDot {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1.1); opacity: 1; }
+}
+
+.typing-text {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* 7. FOOTER & INPUT FORM */
+.ask-me-footer {
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-light);
+}
+
+.ask-me-input-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-light);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  padding: 4px 6px 4px 16px;
+  transition: border-color 0.2s ease;
+}
+
+.ask-me-input-form:focus-within {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(47, 84, 235, 0.15);
+}
+
+.ask-me-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  font-family: inherit;
+}
+
+.ask-me-input::placeholder {
+  color: var(--text-muted);
+}
+
+.ask-me-send-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.ask-me-send-btn:hover:not(:disabled) {
+  background: var(--primary-blue-hover);
+  transform: scale(1.05);
+}
+
+.ask-me-send-btn:disabled {
+  background: var(--border-light);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.ask-me-disclaimer {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* 8. MOBILE RESPONSIVE UX */
+@media (max-width: 600px) {
+  .ask-me-fab {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 16px 10px 12px;
+  }
+  .fab-text { font-size: 0.9rem; }
+
+  .ask-me-panel {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    max-width: 100vw;
+    height: 85vh;
+    max-height: 85vh;
+    border-radius: 24px 24px 0 0;
+    border-bottom: none;
+  }
+}

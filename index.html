@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Primary Meta Tags -->
+  <title>Dadhi Shankar Sharma | Android Developer, Java Specialist &amp; AI Engineer in Ajmer, India</title>
+  <meta name="title" content="Dadhi Shankar Sharma | Android Developer, Java Specialist &amp; AI Engineer in Ajmer, India" />
+  <meta name="description" content="Official portfolio of Dadhi Shankar Sharma — Android &amp; Java Developer from Ajmer, Rajasthan, India. Specializing in Native Android Apps, Firebase, REST APIs, Retrofit, Java, and AI Integration." />
+  <meta name="keywords" content="Dadhi Shankar Sharma, Dadhi Shankar, Android Developer Ajmer, Java Developer Rajasthan, Firebase Developer India, Android Studio, Kotlin, Sandesh App, LibManage, BCA MDSU Ajmer, Mobile App Developer India" />
+  <meta name="author" content="Dadhi Shankar Sharma" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://dadhishankar.github.io/" />
+
+  <!-- Open Graph / Facebook SEO -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dadhishankar.github.io/" />
+  <meta property="og:title" content="Dadhi Shankar Sharma | Android &amp; Java Developer" />
+  <meta property="og:description" content="Passionate Android &amp; Java Developer from Ajmer, India. Expert in Native Android Apps, Firebase, REST APIs, and AI Integration." />
+  <meta property="og:image" content="assets/hero_portrait.png" />
+  <meta property="og:site_name" content="Dadhi Shankar Sharma Portfolio" />
+
+  <!-- Twitter SEO Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://dadhishankar.github.io/" />
+  <meta name="twitter:title" content="Dadhi Shankar Sharma | Android &amp; Java Developer" />
+  <meta name="twitter:description" content="Android Developer &amp; Computer Applications Graduate from Ajmer, Rajasthan. Specialist in Java, Firebase, and AI-powered mobile apps." />
+  <meta name="twitter:image" content="assets/hero_portrait.png" />
+
+  <!-- Structured Data / JSON-LD (Schema.org) for SEO Google Knowledge Graph -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dadhi Shankar Sharma",
+    "jobTitle": "Android Developer & Java Engineer",
+    "url": "https://dadhishankar.github.io/",
+    "email": "mailto:dadhishankar1@gmail.com",
+    "telephone": "+916376736849",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ajmer",
+      "addressRegion": "Rajasthan",
+      "addressCountry": "India"
+    },
+    "almaMater": "Maharshi Dayanand Saraswati University (MDSU)",
+    "sameAs": [
+      "https://github.com",
+      "https://linkedin.com",
+      "https://medium.com",
+      "https://instagram.com/life_of_coder"
+    ],
+    "knowsAbout": ["Android Development", "Java", "Kotlin", "Firebase", "REST APIs", "SQLite", "MySQL", "AI Integration"]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Ask Me AI Assistant Stylesheet -->
+  <link rel="stylesheet" href="ask-me.css" />
+</head>
+<body>
+
+  <!-- Google Antigravity Particle Canvas Background (Controlled via Navbar Option) -->
+  <canvas id="antigravity-canvas"></canvas>
+
+  <!-- Background Decorative Spots -->
+  <div class="bg-gradient-spot spot-top-left"></div>
+  <div class="bg-gradient-spot spot-top-right"></div>
+  <div class="bg-gradient-spot spot-middle-blue"></div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" id="navbar">
+      <a href="#hero" class="nav-logo" id="nav-logo-link">
+        <span class="logo-box">DS</span>
+        <span class="logo-text">Dadhi Shankar</span>
+      </a>
+
+      <div class="nav-links-container">
+        <a href="#hero" class="nav-link active" id="nav-home">Home</a>
+        <a href="#about" class="nav-link" id="nav-about-link">About</a>
+        <a href="#services" class="nav-link" id="nav-services-link">Services</a>
+        <a href="#projects" class="nav-link" id="nav-projects-link">Projects</a>
+        <a href="#skills" class="nav-link" id="nav-skills-link">Skills</a>
+        <a href="#contact" class="nav-link" id="nav-contact-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Optional Antigravity Particle Toggle Button -->
+        <button id="antigravity-toggle" class="btn-antigravity-toggle active" title="Toggle Antigravity Particles">
+          <i class="fa-solid fa-atom"></i>
+          <span></span>
+        </button>
+
+        <!-- Dark/Light Theme Toggle Option -->
+        <button id="theme-toggle" class="btn-theme-toggle" title="Toggle Dark/Light Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <!-- PhonePe Quick Hub Toggle -->
+        <button id="phonepe-tile-toggle" class="btn-phonepe-toggle" title="PhonePe Quick Hub">
+          <i class="fa-solid fa-grid-2"></i>
+          <span>Quick Hub</span>
+        </button>
+
+        <a href="#contact" class="btn-talk" id="btn-nav-hire">
+          Hire Me <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PHONEPE SYMMETRIC QUICK ACTION TILE HUB -->
+  <div id="phonepe-drawer" class="phonepe-drawer hidden">
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div class="drawer-title">
+          <span class="phonepe-badge">PhonePe Styled Quick Hub</span>
+          <h3>Interactive Actions &amp; Tools</h3>
+        </div>
+        <button id="btn-close-drawer" class="btn-close-icon"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="phonepe-grid">
+        <!-- Tile 1: Project Estimator -->
+        <div class="phonepe-tile tile-blue" id="tile-estimator">
+          <div class="tile-icon"><i class="fa-solid fa-calculator"></i></div>
+          <h4>App Cost Estimator</h4>
+          <p>Instant budget &amp; duration estimation for Android &amp; Java projects.</p>
+          <span class="tile-badge">Interactive Calculator</span>
+        </div>
+
+        <!-- Tile 2: Tech Stack Radar -->
+        <div class="phonepe-tile tile-purple" id="tile-techstack">
+          <div class="tile-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <h4>Technical Skills Matrix</h4>
+          <p>Java, Kotlin, Firebase, REST APIs, Android SDK &amp; AI Integration.</p>
+          <span class="tile-badge">Live Skills</span>
+        </div>
+
+        <!-- Tile 3: Download Resume -->
+        <div class="phonepe-tile tile-green" id="tile-resume">
+          <div class="tile-icon"><i class="fa-solid fa-file-invoice"></i></div>
+          <h4>Download Resume</h4>
+          <p>View Dadhi Shankar Sharma's verified qualifications &amp; download PDF.</p>
+          <span class="tile-badge">Resume PDF</span>
+        </div>
+
+        <!-- Tile 4: Direct Contact -->
+        <div class="phonepe-tile tile-orange" id="tile-booking">
+          <div class="tile-icon"><i class="fa-solid fa-paper-plane"></i></div>
+          <h4>Direct Mail &amp; Call</h4>
+          <p>Connect directly via email or phone for internships &amp; freelance projects.</p>
+          <span class="tile-badge">Available Now</span>
+        </div>
+      </div>
+
+      <!-- EMBEDDED DYNAMIC CALCULATOR -->
+      <div id="estimator-panel" class="estimator-panel hidden">
+        <h4><i class="fa-solid fa-wand-magic-sparkles"></i> Android &amp; Software Project Estimator</h4>
+        <div class="calculator-controls">
+          <div class="calc-group">
+            <label for="calc-project-type">Select Application Type:</label>
+            <select id="calc-project-type">
+              <option value="600">Native Android Application ($600+)</option>
+              <option value="500">Firebase Backend Integration ($500+)</option>
+              <option value="700">AI-Powered App (Gemini / OpenAI API) ($700+)</option>
+              <option value="400">Desktop Java Management System ($400+)</option>
+            </select>
+          </div>
+          <div class="calc-group">
+            <label for="calc-pages">Number of App Screens/Modules: <span id="pages-val">5</span></label>
+            <input type="range" id="calc-pages" min="1" max="20" value="5" />
+          </div>
+          <div class="calc-group">
+            <label>Features &amp; Integration Add-ons:</label>
+            <div class="calc-checkboxes">
+              <label><input type="checkbox" id="feature-auth" value="150" checked /> Firebase Auth &amp; Firestore DB</label>
+              <label><input type="checkbox" id="feature-payments" value="200" checked /> Push Notifications &amp; Cloud Messaging</label>
+              <label><input type="checkbox" id="feature-physics" value="180" checked /> Retrofit REST API &amp; JSON Parsing</label>
+              <label><input type="checkbox" id="feature-seo" value="250" /> Gemini AI / AI Chatbot Integration</label>
+            </div>
+          </div>
+        </div>
+        <div class="calc-result-box">
+          <div class="res-item">
+            <span>Estimated Budget:</span>
+            <strong id="calc-total-price">$930 USD</strong>
+          </div>
+          <div class="res-item">
+            <span>Estimated Delivery:</span>
+            <strong id="calc-total-time">8 Days</strong>
+          </div>
+          <button id="btn-send-estimate" class="btn-primary-action">Send Estimate Request <i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        
+        <!-- Hero Header Headline -->
+        <div class="hero-title-wrapper">
+          <h1 class="hero-headline">
+            Android &amp; Java <br />
+            <span class="text-blue-gradient">Developer</span> <br />
+            &amp; AI <span class="plus-symbol">+</span>
+          </h1>
+
+          <!-- Rotating Stamp "AVAILABLE FOR WORK" -->
+          <div class="hero-stamp" id="hero-stamp">
+            <svg class="stamp-text-svg" viewBox="0 0 100 100">
+              <path id="stamp-circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+              <text font-size="10" font-weight="700" letter-spacing="1.6" fill="#111827">
+                <textPath xlink:href="#stamp-circle">INTERNSHIP &amp; FREELANCE • </textPath>
+              </text>
+            </svg>
+            <div class="stamp-center-icon"><i class="fa-solid fa-code"></i></div>
+          </div>
+        </div>
+
+        <!-- Hero Center Graphic -->
+        <div class="hero-center-graphic" id="hero-portrait-card">
+          <div class="portrait-card-bg">
+            <svg class="decorative-squiggle squiggle-hero-top" viewBox="0 0 120 60" fill="none">
+              <path d="M10 40 C 30 10, 70 50, 90 20 C 100 10, 110 30, 115 25" stroke="#2F54EB" stroke-width="3" stroke-linecap="round" fill="none" />
+            </svg>
+            <img src="assets/hero_portrait.png" alt="Dadhi Shankar Sharma Android Developer Ajmer Rajasthan India" class="hero-portrait-img" id="hero-img-element" />
+            <span class="badge-accent-plus">+</span>
+          </div>
+        </div>
+
+        <!-- Hero Bio & Intro Wrapper -->
+        <div class="hero-bio-wrapper" id="hero-bio-card">
+          <div class="bio-greeting">
+            <span class="greeting-tag">HI, I'M 👋</span>
+            <h2 class="developer-name">Dadhi Shankar Sharma</h2>
+            <span class="developer-role-tag">Android Developer | Java Developer | Firebase | AI Enthusiast</span>
+          </div>
+
+          <p class="bio-description">
+            A passionate Android Developer and Computer Applications graduate with expertise in <strong>Java</strong>, <strong>Firebase</strong>, <strong>Android Studio</strong>, and modern mobile application development. Based in Ajmer, Rajasthan, India.
+          </p>
+
+          <div class="availability-badge">
+            <span class="pulse-dot"></span> Available for Internship and Freelance Projects
+          </div>
+
+          <div class="hero-btn-row">
+            <a href="#projects" class="btn-primary-hero">View Projects ↗</a>
+            <button id="btn-download-resume-hero" class="btn-secondary-hero">Download Resume <i class="fa-solid fa-download"></i></button>
+          </div>
+
+          <div class="bio-footer-row">
+            <!-- Social Buttons Group -->
+            <div class="social-links-group">
+              <a href="https://github.com" target="_blank" class="social-circle-btn" title="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+              <a href="https://linkedin.com" target="_blank" class="social-circle-btn" title="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://medium.com" target="_blank" class="social-circle-btn" title="Medium Blog"><i class="fa-brands fa-medium"></i></a>
+              <a href="https://instagram.com/life_of_coder" target="_blank" class="social-circle-btn" title="Instagram (@life_of_coder)"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://twitter.com" target="_blank" class="social-circle-btn" title="Twitter Profile"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+
+            <!-- Big Circular Action Button "Hire Me ↗" -->
+            <a href="#contact" class="circle-talk-btn" id="btn-circle-talk">
+              <span class="btn-talk-text">Hire Me</span>
+              <i class="fa-solid fa-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STATS COUNTER BAR SECTION -->
+    <section class="stats-section" id="stats">
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-number-wrapper">
+            <span class="stat-number" data-target="6" data-prefix="0" data-suffix="+">0</span>
+          </div>
+          <span class="stat-label">Projects Completed</span>
+        </div>
+
+        <div class="stat-divider"></div>
+
+        <div class="stat-card">
+          <div class="stat-number-wrapper">
+            <span class="stat-number" data-target="1000" data-suffix="+">0</span>
+          </div>
+          <span class="stat-label">Git Commits</span>
+        </div>
+
+        <div class="stat-divider"></div>
+
+        <div class="stat-card">
+          <div class="stat-number-wrapper">
+            <span class="stat-number" data-target="100" data-suffix="%">0</span>
+          </div>
+          <span class="stat-label">Learning Mindset</span>
+        </div>
+
+        <div class="stat-divider"></div>
+
+        <div class="stat-card">
+          <div class="stat-number-wrapper">
+            <span class="stat-number-text">BCA</span>
+          </div>
+          <span class="stat-label">Graduate (MDSU)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT ME & CAREER OBJECTIVE SECTION -->
+    <section class="about-section" id="about">
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <a href="#contact" class="btn-outline-pill">Get In Touch ↗</a>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-card-main">
+          <h3>Computer Applications Graduate</h3>
+          <p class="about-lead">
+            I am a Computer Applications graduate from Maharshi Dayanand Saraswati University (MDSU), Ajmer, Rajasthan, India.
+          </p>
+          <p>
+            My primary focus is <strong>Android Application Development</strong> using Java, Firebase, and modern software engineering principles. I love solving complex problems and creating applications that are secure, user-friendly, and scalable.
+          </p>
+          <p>
+            I believe technology should simplify people's lives, and I enjoy building products that make a real impact.
+          </p>
+
+          <div class="career-objective-box">
+            <h4><i class="fa-solid fa-bullseye"></i> Career Objective</h4>
+            <p>
+              Seeking an opportunity as an Android Developer where I can contribute my software development skills, continuously learn new technologies, and build innovative applications that create real value.
+            </p>
+          </div>
+        </article>
+
+        <aside class="about-card-skills">
+          <h3>Currently Improving Skills In</h3>
+          <ul class="improving-skills-list">
+            <li><i class="fa-brands fa-android"></i> Android Development</li>
+            <li><i class="fa-solid fa-fire"></i> Firebase Architecture</li>
+            <li><i class="fa-solid fa-code"></i> Kotlin</li>
+            <li><i class="fa-solid fa-network-wired"></i> REST APIs &amp; Retrofit</li>
+            <li><i class="fa-solid fa-brain"></i> AI Integration (Gemini AI)</li>
+            <li><i class="fa-solid fa-cubes"></i> Clean Architecture</li>
+            <li><i class="fa-brands fa-git-alt"></i> Git &amp; GitHub</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION ("MY SERVICES") -->
+    <section class="services-section" id="services">
+      <div class="section-header">
+        <h2 class="section-title">My Services</h2>
+        <a href="#contact" class="btn-outline-pill">Request Service ↗</a>
+      </div>
+
+      <div class="services-grid-6">
+        
+        <!-- Service 1: Android Application Development -->
+        <article class="service-card card-blue-highlight" id="service-card-1">
+          <div class="card-top-icon"><i class="fa-brands fa-android"></i></div>
+          <h3 class="service-title">Android Application Development</h3>
+          <ul class="service-checklist">
+            <li><i class="fa-solid fa-check"></i> Native Android Apps</li>
+            <li><i class="fa-solid fa-check"></i> Java Development</li>
+            <li><i class="fa-solid fa-check"></i> Responsive UI</li>
+            <li><i class="fa-solid fa-check"></i> Firebase Integration</li>
+            <li><i class="fa-solid fa-check"></i> Clean Architecture</li>
+          </ul>
+        </article>
+
+        <!-- Service 2: Firebase Backend Development -->
+        <article class="service-card card-light-blue" id="service-card-2">
+          <div class="card-top-icon icon-blue"><i class="fa-solid fa-fire"></i></div>
+          <h3 class="service-title">Firebase Backend Development</h3>
+          <ul class="service-checklist">
+            <li><i class="fa-solid fa-check"></i> Authentication</li>
+            <li><i class="fa-solid fa-check"></i> Firestore &amp; Realtime DB</li>
+            <li><i class="fa-solid fa-check"></i> Cloud Storage</li>
+            <li><i class="fa-solid fa-check"></i> Push Notifications</li>
+          </ul>
+        </article>
+
+        <!-- Service 3: Java Software Development -->
+        <article class="service-card card-soft-gray" id="service-card-3">
+          <div class="card-top-icon icon-dark"><i class="fa-brands fa-java"></i></div>
+          <h3 class="service-title">Java Software Development</h3>
+          <ul class="service-checklist">
+            <li><i class="fa-solid fa-check"></i> Core Java</li>
+            <li><i class="fa-solid fa-check"></i> OOP Design</li>
+            <li><i class="fa-solid fa-check"></i> Collections Framework</li>
+            <li><i class="fa-solid fa-check"></i> JDBC &amp; Multithreading</li>
+          </ul>
+        </article>
+
+        <!-- Service 4: REST API Integration -->
+        <article class="service-card card-soft-gray" id="service-card-4">
+          <div class="card-top-icon icon-blue"><i class="fa-solid fa-plug"></i></div>
+          <h3 class="service-title">REST API Integration</h3>
+          <ul class="service-checklist">
+            <li><i class="fa-solid fa-check"></i> Retrofit</li>
+            <li><i class="fa-solid fa-check"></i> JSON Parsing</li>
+            <li><i class="fa-solid fa-check"></i> Secure Authentication</li>
+            <li><i class="fa-solid fa-check"></i> API Optimization</li>
+          </ul>
+        </article>
+
+        <!-- Service 5: Database Design -->
+        <article class="service-card card-light-blue" id="service-card-5">
+          <div class="card-top-icon icon-dark"><i class="fa-solid fa-database"></i></div>
+          <h3 class="service-title">Database Design</h3>
+          <ul class="service-checklist">
+            <li><i class="fa-solid fa-check"></i> Firebase &amp; SQLite</li>
+            <li><i class="fa-solid fa-check"></i> MySQL Integration</li>
+            <li><i class="fa-solid fa-check"></i> Data Security</li>
+            <li><i class="fa-solid fa-check"></i> Database Optimization</li>
+          </ul>
+        </article>
+
+        <!-- Service 6: AI Powered Applications -->
+        <article class="service-card card-blue-highlight" id="service-card-6">
+          <div class="card-top-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3 class="service-title">AI Powered Applications</h3>
+          <ul class="service-checklist">
+            <li><i class="fa-solid fa-check"></i> Gemini AI &amp; Claude AI</li>
+            <li><i class="fa-solid fa-check"></i> OpenAI APIs</li>
+            <li><i class="fa-solid fa-check"></i> AI Chatbots</li>
+            <li><i class="fa-solid fa-check"></i> Smart AI Features</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS & TOOLS SECTION -->
+    <section class="skills-section" id="skills">
+      <div class="section-header">
+        <h2 class="section-title">Technical Skills &amp; Tools</h2>
+      </div>
+
+      <div class="skills-grid-container">
+        
+        <!-- Programming Languages -->
+        <div class="skill-category-card">
+          <h4><i class="fa-solid fa-code"></i> Programming Languages</h4>
+          <div class="skill-tags">
+            <span class="skill-tag tag-primary">Java</span>
+            <span class="skill-tag tag-primary">Kotlin</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+          </div>
+        </div>
+
+        <!-- Frameworks & Tech -->
+        <div class="skill-category-card">
+          <h4><i class="fa-brands fa-android"></i> Frameworks &amp; Technologies</h4>
+          <div class="skill-tags">
+            <span class="skill-tag tag-primary">Android SDK</span>
+            <span class="skill-tag tag-primary">Firebase</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag tag-primary">REST APIs</span>
+            <span class="skill-tag">XML</span>
+            <span class="skill-tag">Material Design</span>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="skill-category-card">
+          <h4><i class="fa-solid fa-database"></i> Databases</h4>
+          <div class="skill-tags">
+            <span class="skill-tag tag-primary">Firebase Firestore</span>
+            <span class="skill-tag tag-primary">Realtime Database</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">MySQL</span>
+          </div>
+        </div>
+
+        <!-- Tools I Use -->
+        <div class="skill-category-card">
+          <h4><i class="fa-solid fa-screwdriver-wrench"></i> Development Tools I Use</h4>
+          <div class="skill-tags">
+            <span class="skill-tag tag-primary">Android Studio</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Git &amp; GitHub</span>
+            <span class="skill-tag tag-primary">Firebase Console</span>
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">Figma</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects-section" id="projects">
+      <div class="section-header">
+        <div class="section-title-with-squiggle">
+          <h2 class="section-title">Featured Projects</h2>
+        </div>
+      </div>
+
+      <div class="projects-list">
+        
+        <!-- PROJECT 1: Sandesh -->
+        <article class="project-row" id="project-row-1">
+          <div class="project-info-side">
+            <span class="project-category">Android Application</span>
+            <h3 class="project-name">Sandesh</h3>
+            <p class="project-desc-short">
+              A real-time messaging Android application inspired by WhatsApp. Supports secure authentication, instant chat, media sharing, and Firebase cloud synchronization.
+            </p>
+            <div class="project-tech-pills">
+              <span>Java</span> <span>Firebase</span> <span>Android Studio</span> <span>Firestore</span>
+            </div>
+            <button class="btn-project-circle-arrow" data-project="sandesh" aria-label="View Sandesh Details">
+              <i class="fa-solid fa-arrow-up-right"></i>
+            </button>
+          </div>
+          <div class="project-media-side">
+            <div class="project-card-image-box">
+              <img src="assets/project_mobile.png" alt="Sandesh Real Time Messaging Android App UI Screenshot" class="project-img" />
+              <div class="project-badge-overlay">
+                <span>SANDESH MESSENGER</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: LibManage -->
+        <article class="project-row row-reversed" id="project-row-2">
+          <div class="project-media-side">
+            <div class="project-card-image-box">
+              <img src="assets/project_figma.png" alt="LibManage Digital Library Management System Android App UI Screenshot" class="project-img" />
+              <div class="project-badge-overlay">
+                <span>LIBMANAGE DIGITAL LIBRARY</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-info-side">
+            <span class="project-category">Library Management System</span>
+            <h3 class="project-name">LibManage</h3>
+            <p class="project-desc-short">
+              An Android-based digital library management application designed to simplify book management, search, user authentication, and AI-powered book recommendations.
+            </p>
+            <div class="project-tech-pills">
+              <span>Java</span> <span>Firebase</span> <span>AI Integration</span> <span>Android Studio</span>
+            </div>
+            <button class="btn-project-circle-arrow" data-project="libmanage" aria-label="View LibManage Details">
+              <i class="fa-solid fa-arrow-up-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: Departmental Store Management System -->
+        <article class="project-row" id="project-row-3">
+          <div class="project-info-side">
+            <span class="project-category">Desktop Software</span>
+            <h3 class="project-name">Departmental Store Management System</h3>
+            <p class="project-desc-short">
+              Desktop application developed using Java and MySQL following MVC architecture for inventory management, billing, employee management, and customer records.
+            </p>
+            <div class="project-tech-pills">
+              <span>Java</span> <span>MySQL</span> <span>MVC Architecture</span> <span>JDBC</span>
+            </div>
+            <button class="btn-project-circle-arrow" data-project="store-system" aria-label="View Departmental Store Details">
+              <i class="fa-solid fa-arrow-up-right"></i>
+            </button>
+          </div>
+          <div class="project-media-side">
+            <div class="project-card-image-box">
+              <img src="assets/project_db.png" alt="Departmental Store Management Desktop Application Screenshot" class="project-img" />
+              <div class="project-badge-overlay">
+                <span>STORE MANAGEMENT SYSTEM</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION, CERTIFICATIONS & EXPERIENCE -->
+    <section class="credentials-section" id="credentials">
+      <div class="credentials-container">
+        
+        <!-- Education -->
+        <div class="cred-column">
+          <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+          <div class="cred-card">
+            <span class="cred-year">Graduated</span>
+            <h4>Bachelor of Computer Applications (BCA)</h4>
+            <p>Maharshi Dayanand Saraswati University (MDSU)</p>
+            <span>Ajmer, Rajasthan, India</span>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="cred-column">
+          <h3><i class="fa-solid fa-award"></i> Certifications</h3>
+          <ul class="cert-list">
+            <li><i class="fa-solid fa-check-double"></i> Google Firebase Certification</li>
+            <li><i class="fa-solid fa-check-double"></i> Android Development Specialist</li>
+            <li><i class="fa-solid fa-check-double"></i> Java Programming Mastery</li>
+            <li><i class="fa-solid fa-check-double"></i> Git &amp; GitHub Version Control</li>
+            <li><i class="fa-solid fa-check-double"></i> AI Development &amp; API Integration</li>
+          </ul>
+        </div>
+
+        <!-- Experience -->
+        <div class="cred-column">
+          <h3><i class="fa-solid fa-briefcase"></i> Experience</h3>
+          <div class="cred-card">
+            <span class="cred-year">Personal &amp; Independent Projects</span>
+            <h4>Android Developer</h4>
+            <p>Built multiple Android applications focusing on secure authentication, Firebase backend integration, and scalable mobile architectures.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WHY HIRE ME SECTION -->
+    <section class="why-hire-section">
+      <div class="why-hire-container">
+        <h2>Why Hire Me</h2>
+        <div class="why-hire-grid">
+          <div class="why-item"><i class="fa-solid fa-circle-check"></i> Clean Code</div>
+          <div class="why-item"><i class="fa-solid fa-circle-check"></i> Fast Learner</div>
+          <div class="why-item"><i class="fa-solid fa-circle-check"></i> Strong Problem Solving</div>
+          <div class="why-item"><i class="fa-solid fa-circle-check"></i> Android Development</div>
+          <div class="why-item"><i class="fa-solid fa-circle-check"></i> Firebase Expertise</div>
+          <div class="why-item"><i class="fa-solid fa-circle-check"></i> Java Programming</div>
+          <div class="why-item"><i class="fa-solid fa-circle-check"></i> API Integration</div>
+          <div class="why-item"><i class="fa-solid fa-circle-check"></i> AI Integration</div>
+          <div class="why-item"><i class="fa-solid fa-circle-check"></i> Team Collaboration</div>
+          <div class="why-item"><i class="fa-solid fa-circle-check"></i> Continuous Learning</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="cta-section" id="contact">
+      <div class="cta-container">
+        
+        <div class="cta-content">
+          <h2 class="cta-title">
+            Let's Build Something<br />
+            Amazing Together.
+          </h2>
+          <p class="cta-subtitle">
+            I'm open to internships, freelance work, collaborations, and exciting software development opportunities.
+          </p>
+
+          <div class="contact-details-grid">
+            <div class="contact-card">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Email</span>
+              <strong><a href="mailto:dadhishankar1@gmail.com">dadhishankar1@gmail.com</a></strong>
+            </div>
+
+            <div class="contact-card">
+              <i class="fa-solid fa-phone"></i>
+              <span>Phone</span>
+              <strong><a href="tel:+916376736849">+91 6376736849</a></strong>
+            </div>
+
+            <div class="contact-card">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Location</span>
+              <strong>Ajmer, Rajasthan, India</strong>
+            </div>
+          </div>
+
+          <a href="mailto:dadhishankar1@gmail.com" class="cta-spin-btn" id="btn-cta-hire">
+            <span class="cta-spin-text">Hire Me</span>
+            <i class="fa-solid fa-arrow-up-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-container">
+      
+      <div class="footer-brand-side">
+        <div class="footer-logo">
+          <span class="logo-box">DS</span>
+        </div>
+        <h3 class="footer-heading">Dadhi Shankar Sharma</h3>
+        <p class="footer-address">
+          Android Developer | Java Developer | Firebase | AI Enthusiast<br />
+          Ajmer, Rajasthan, India
+        </p>
+      </div>
+
+      <div class="footer-newsletter-side">
+        <h4>Connect &amp; Social Links</h4>
+        <div class="footer-social-row">
+          <a href="https://github.com" target="_blank" class="footer-social-icon" title="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com" target="_blank" class="footer-social-icon" title="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://medium.com" target="_blank" class="footer-social-icon" title="Medium Blog"><i class="fa-brands fa-medium"></i></a>
+          <a href="https://instagram.com/life_of_coder" target="_blank" class="footer-social-icon" title="Instagram (@life_of_coder)"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://twitter.com" target="_blank" class="footer-social-icon" title="Twitter Profile"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom-bar">
+      <span>© 2026 Dadhi Shankar Sharma. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT CASE STUDY MODAL -->
+  <div id="project-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <button id="btn-close-modal" class="modal-close-btn" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Dynamic content injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+  <!-- Google Antigravity Particle Engine JS -->
+  <script src="antigravity.js"></script>
+  <!-- Portfolio Data Context & Ask Me AI Assistant Engine -->
+  <script src="portfolio-context.js"></script>
+  <script src="ask-me.js"></script>
+</body>
+</html>

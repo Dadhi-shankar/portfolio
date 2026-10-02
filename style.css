@@ -63,6 +63,7 @@ body {
   -webkit-font-smoothing: antialiased;
   position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
@@ -1475,26 +1476,474 @@ body.dark-mode .nav-links-container {
   justify-content: center;
 }
 
-/* MEDIA QUERIES */
-@media (max-width: 1024px) {
-  .hero-container { grid-template-columns: 1fr; }
-  .hero-center-graphic { grid-column: 1 / -1; grid-row: 3 / 4; justify-content: center; }
-  .hero-bio-wrapper { grid-column: 1 / -1; grid-row: 2 / 3; max-width: 100%; }
-  .about-grid { grid-template-columns: 1fr; }
-  .services-grid-6 { grid-template-columns: 1fr; }
-  .skills-grid-container { grid-template-columns: 1fr; }
-  .project-row, .project-row.row-reversed { grid-template-columns: 1fr; }
-  .credentials-container { grid-template-columns: 1fr; }
-  .why-hire-grid { grid-template-columns: repeat(2, 1fr); }
-  .contact-details-grid { grid-template-columns: 1fr; }
-  .footer-container { grid-template-columns: 1fr; }
+/* MEDIA QUERIES & RESPONSIVE ADAPTATIONS */
+
+/* 1. LARGE DESKTOPS / WIDE SCREENS (> 1200px) */
+@media (min-width: 1400px) {
+  .hero-container,
+  .stats-container,
+  .about-grid,
+  .services-grid-6,
+  .skills-grid-container,
+  .projects-list,
+  .credentials-container,
+  .why-hire-container,
+  .cta-container,
+  .footer-container,
+  .footer-bottom-bar {
+    max-width: 1280px;
+  }
 }
 
-@media (max-width: 640px) {
-  .nav-links-container { display: none; }
-  .antigravity-bar { display: none; }
-  .phonepe-grid { grid-template-columns: 1fr; }
-  .why-hire-grid { grid-template-columns: 1fr; }
-  .stats-container { flex-direction: column; gap: 20px; }
-  .stat-divider { width: 60px; height: 1px; }
+/* 2. LAPTOPS & TABLETS LANDSCAPE (1025px - 1200px) */
+@media (max-width: 1200px) {
+  .hero-headline {
+    font-size: clamp(3.2rem, 7.5vw, 6rem);
+  }
+  .developer-name {
+    font-size: 2.8rem;
+  }
+  .services-grid-6 {
+    gap: 20px;
+  }
+  .service-card {
+    padding: 28px 22px;
+    min-height: auto;
+  }
+  .project-row,
+  .project-row.row-reversed {
+    padding: 32px;
+    gap: 24px;
+  }
+  .why-hire-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
+
+/* 3. TABLETS PORTRAIT & SMALL LAPTOPS (769px - 1024px) */
+@media (max-width: 1024px) {
+  /* Navbar */
+  .navbar-wrapper {
+    padding: 0 16px;
+    top: 12px;
+  }
+  .navbar {
+    padding: 10px 16px;
+  }
+  .nav-link {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+  
+  /* Hero */
+  .hero-section {
+    padding-top: 130px;
+    padding-bottom: 40px;
+  }
+  .hero-container {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+  .hero-title-wrapper {
+    grid-column: 1 / -1;
+  }
+  .hero-headline {
+    font-size: clamp(3rem, 7vw, 4.5rem);
+  }
+  .hero-stamp {
+    width: 110px;
+    height: 110px;
+  }
+  .hero-center-graphic {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    justify-content: center;
+  }
+  .portrait-card-bg {
+    max-width: 440px;
+    min-height: 380px;
+  }
+  .hero-bio-wrapper {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    max-width: 100%;
+  }
+
+  /* Layout Grids */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .services-grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .skills-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .project-row, 
+  .project-row.row-reversed {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .project-row.row-reversed .project-media-side {
+    order: 2;
+  }
+  .project-row.row-reversed .project-info-side {
+    order: 1;
+  }
+  .project-img {
+    height: 260px;
+  }
+  .credentials-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .why-hire-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .contact-details-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .footer-newsletter-side {
+    align-items: flex-start;
+  }
+}
+
+/* 4. LARGE PHONES & SMALL TABLETS (641px - 768px) */
+@media (max-width: 768px) {
+  /* Status Bar */
+  .antigravity-bar {
+    top: 76px;
+    padding: 6px 14px;
+    gap: 12px;
+    font-size: 0.8rem;
+    max-width: 90vw;
+  }
+  .ag-btn {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+
+  /* Navbar Adjustments */
+  .nav-links-container {
+    display: none; /* Mobile Menu via drawer or focused CTA on small screens */
+  }
+  .logo-text {
+    font-size: 1rem;
+  }
+  .btn-phonepe-toggle span {
+    display: none;
+  }
+  .btn-phonepe-toggle {
+    padding: 8px 12px;
+  }
+  .btn-talk {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding-top: 110px;
+  }
+  .hero-title-wrapper {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .hero-stamp {
+    margin-top: 0;
+    width: 90px;
+    height: 90px;
+    align-self: flex-end;
+  }
+  .developer-name {
+    font-size: clamp(2.2rem, 6vw, 3rem);
+  }
+  .bio-description {
+    font-size: 1.05rem;
+  }
+  .bio-footer-row {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* Stats Section */
+  .stats-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+  .stat-divider {
+    display: none;
+  }
+
+  /* Services Grid */
+  .services-grid-6 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Skills Container */
+  .skills-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Why Hire Grid */
+  .why-hire-container {
+    padding: 32px 24px;
+    margin: 0 16px;
+  }
+  .why-hire-container h2 {
+    font-size: 1.8rem;
+  }
+  .why-hire-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* Contact Section */
+  .contact-details-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .cta-title {
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+  }
+
+  /* Footer */
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* PhonePe Drawer */
+  .drawer-content {
+    padding: 24px 20px;
+    width: 95%;
+  }
+  .calc-checkboxes {
+    grid-template-columns: 1fr;
+  }
+  .calc-result-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* 5. PHONES (320px - 640px) */
+@media (max-width: 640px) {
+  /* Container paddings */
+  .hero-container,
+  .stats-container,
+  .about-grid,
+  .services-grid-6,
+  .skills-grid-container,
+  .projects-list,
+  .credentials-container,
+  .footer-container,
+  .footer-bottom-bar {
+    padding: 0 16px;
+  }
+
+  /* Navbar styling for mobile touch target compliance */
+  .navbar-wrapper {
+    padding: 0 12px;
+    top: 10px;
+  }
+  .navbar {
+    padding: 8px 12px;
+  }
+  .logo-box {
+    padding: 4px 10px;
+    font-size: 0.95rem;
+  }
+  .logo-text {
+    font-size: 0.95rem;
+  }
+  .btn-theme-toggle, .btn-antigravity-toggle {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+  .btn-talk {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  /* Section Padding */
+  .hero-section {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+  .about-section,
+  .services-section,
+  .skills-section,
+  .projects-section,
+  .credentials-section,
+  .cta-section {
+    padding: 50px 0;
+  }
+
+  /* Typography Adjustments */
+  .hero-headline {
+    font-size: clamp(2.4rem, 10vw, 3.4rem);
+    letter-spacing: -1px;
+  }
+  .developer-name {
+    font-size: 2rem;
+  }
+  .developer-role-tag {
+    font-size: 0.9rem;
+  }
+  .bio-description {
+    font-size: 0.98rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  /* Card Paddings & Layouts */
+  .about-card-main,
+  .about-card-skills,
+  .service-card,
+  .skill-category-card,
+  .cred-column {
+    padding: 24px 20px;
+    border-radius: var(--radius-md);
+  }
+  .project-row,
+  .project-row.row-reversed {
+    padding: 24px 20px;
+    border-radius: var(--radius-md);
+  }
+  .project-name {
+    font-size: 1.5rem;
+  }
+  .project-img {
+    height: 200px;
+  }
+
+  /* Hero Button Rows & Touch Targets */
+  .hero-btn-row {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .btn-primary-hero,
+  .btn-secondary-hero {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+  .bio-footer-row {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .circle-talk-btn {
+    width: 90px;
+    height: 90px;
+    font-size: 0.85rem;
+  }
+
+  /* Why Hire Section */
+  .why-hire-section {
+    padding: 40px 0;
+  }
+  .why-hire-container {
+    padding: 28px 18px;
+    margin: 0 12px;
+    border-radius: var(--radius-md);
+  }
+  .why-hire-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .why-item {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  /* CTA Section */
+  .cta-title {
+    font-size: 2rem;
+  }
+  .contact-card {
+    padding: 18px 14px;
+  }
+  .contact-card strong {
+    font-size: 0.88rem;
+    word-break: break-all;
+  }
+  .cta-spin-btn {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Antigravity bar hidden or minimalist on extra small screens */
+  .antigravity-bar {
+    display: none;
+  }
+}
+
+/* 6. VERY SMALL PHONES (320px - 374px) */
+@media (max-width: 374px) {
+  .hero-headline {
+    font-size: 2.2rem;
+  }
+  .developer-name {
+    font-size: 1.75rem;
+  }
+  .logo-text {
+    display: none; /* Show logo box icon only on extreme narrow screens to prevent overflow */
+  }
+  .btn-talk {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+  }
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+  .project-badge-overlay {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+}
+
+/* TOUCH DEVICE ADAPTATIONS & HOVER STATES */
+@media (hover: none) and (pointer: coarse) {
+  /* Ensure hover effects are touch-friendly without sticky hovers */
+  .service-card:hover,
+  .project-row:hover,
+  .social-circle-btn:hover,
+  .circle-talk-btn:hover,
+  .cta-spin-btn:hover {
+    transform: none !important;
+  }
+  .service-card:active,
+  .project-row:active,
+  .btn-primary-hero:active,
+  .btn-secondary-hero:active,
+  .circle-talk-btn:active,
+  .cta-spin-btn:active {
+    transform: scale(0.98) !important;
+    opacity: 0.9;
+  }
+}
+
